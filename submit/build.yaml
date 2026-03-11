@@ -1,1 +1,198 @@
 # cloudformation solution goes here
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template that creates an EC2 instance with bootstrapping script, custom EBS volume, S3 bucket, and IAM role for bucket access
+
+Parameters:
+  InstanceType:
+    Description: The EC2 instance type
+    Type: String
+    Default: t3.micro
+    AllowedValues:
+      - t3.micro
+      - t3.small
+      - t3.medium
+  KeyName:
+    Description: Name of an existing EC2 key pair to allow SSH access to the instances
+    Type: 'AWS::EC2::KeyPair::KeyName'
+  UvaId:
+    Description: Your UVA computing ID
+    Type: String
+    MinLength: 3
+    MaxLength: 9
+  SSHLocation:
+    Description: The IP address range that can be used to SSH to the EC2 instances
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 0.0.0.0/0
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+
+Resources:
+  # Security Group allowing ports 80 and 22
+  EC2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for EC2 instance allowing HTTP and SSH access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+          Description: Allow HTTP traffic from anywhere
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: !Ref SSHLocation
+          Description: Allow SSH access
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-ec2-sg
+
+  # IAM Role for EC2 instance
+  EC2InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-ec2-role
+
+  # IAM Instance Profile to attach the role to EC2
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref EC2InstanceRole
+
+  # IAM Policy for S3 bucket access
+  S3BucketAccessPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: S3BucketAccessPolicy
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:PutObject
+              - s3:DeleteObject
+              - s3:ListBucket
+            Resource:
+              - !Sub ${S3Bucket.Arn}/*
+              - !Sub ${S3Bucket.Arn}
+      Roles:
+        - !Ref EC2InstanceRole
+
+  # S3 Bucket
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      # Example: Calculate bucket name from two parameters using !Sub
+      BucketName: !Sub ${UvaId}-${AWS::StackName}
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-bucket
+
+  # EC2 Instance
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0b6c6ebed2801a5cb
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
+      IamInstanceProfile: !Ref EC2InstanceProfile
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          # Bootstrapping script
+          yum update -y
+          yum install -y httpd aws-cli
+          
+          # Start and enable Apache
+          systemctl start httpd
+          systemctl enable httpd
+
+          set -e
+          
+          # Update and install Python + pip
+          apt-get update -y
+          apt-get install -y git python3 python3-pip python3-venv git
+          
+          # clone and cd
+          # Create a virtualenv in a known location
+          python3 -m venv /opt/anomaly-detection/venv
+          
+          # Activate and install deps
+          source /opt/anomaly-detection/venv/bin/activate
+          /opt/anomaly-detection/venv/bin/pip install -r /opt/anomaly-detection/requirements.txt
+          
+          # The app.py FastAPI app can be run using full paths if necessary, even from outside the virtualenv:
+          /opt/anomaly-detection/venv/bin/fastapi run /opt/anomaly-detection/app.py --reload
+
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-ec2-instance
+
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+
+  ElasticIPAssociation:
+    Type: AWS::EC2::EIPAssociation
+    Properties:
+      InstanceId: !Ref EC2Instance
+      EIP: !Ref ElasticIP
+
+Outputs:
+  InstanceId:
+    Description: The EC2 instance ID
+    Value: !Ref EC2Instance
+    Export:
+      Name: !Sub ${AWS::StackName}-InstanceId
+
+  ElasticIPAddress:
+    Description: Elastic IP address of the EC2 instance
+    Value: !Ref ElasticIP
+
+  SecurityGroupId:
+    Description: The security group ID
+    Value: !Ref EC2SecurityGroup
+    Export:
+      Name: !Sub ${AWS::StackName}-SecurityGroupId
+
+  S3BucketName:
+    Description: The name of the S3 bucket
+    Value: !Ref S3Bucket
+    Export:
+      Name: !Sub ${UvaId}-${AWS::StackName}
+
+  S3BucketArn:
+    Description: The ARN of the S3 bucket
+    Value: !GetAtt S3Bucket.Arn
+    Export:
+      Name: !Sub ${AWS::StackName}-S3BucketArn
+
+  IAMRoleArn:
+    Description: The IAM role ARN for the EC2 instance
+    Value: !GetAtt EC2InstanceRole.Arn
+    Export:
+      Name: !Sub ${AWS::StackName}-IAMRoleArn
