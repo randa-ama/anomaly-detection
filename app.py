@@ -6,7 +6,7 @@ import boto3
 import pandas as pd
 import requests
 from datetime import datetime
-from fastapi import FastAPI, BackgroundTasks, Request
+from fastapi import FastAPI, BackgroundTasks, Request, HTTPException
 from baseline import BaselineManager
 from processor import process_file
 import logging
