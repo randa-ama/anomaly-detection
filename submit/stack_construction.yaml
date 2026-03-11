@@ -1,31 +1,26 @@
 # cloudformation solution goes here
 AWSTemplateFormatVersion: 2010-09-09
-Description: CloudFormation template that creates an EC2 instance with bootstrapping script, custom EBS volume, S3 bucket, and IAM role for bucket access
+Description: CloudFormation template that forms the anomaly detection pipeline for DS5220 Data Project 1
 
 Parameters:
   InstanceType:
     Description: The EC2 instance type
     Type: String
     Default: t3.micro
-    AllowedValues:
-      - t3.micro
-      - t3.small
-      - t3.medium
   KeyName:
-    Description: Name of an existing EC2 key pair to allow SSH access to the instances
+    Description: Name of an existing EC2 key pair to allow SSH access
     Type: 'AWS::EC2::KeyPair::KeyName'
   UvaId:
-    Description: Your UVA computing ID
+    Description: Your UVA computing ID (to name bucket)
     Type: String
     MinLength: 3
     MaxLength: 9
   SSHLocation:
-    Description: The IP address range that can be used to SSH to the EC2 instances
+    Description: The IP address range that can be used for SSH access
     Type: String
     MinLength: 9
     MaxLength: 18
     Default: 0.0.0.0/0
-    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
 
 Resources:
   # SNS topic creation
@@ -48,18 +43,40 @@ Resources:
             Resource: !Ref SNSTopic
             Condition:
               ArnLike:
-                aws:SourceArn: !Sub 'arn:aws:s3:::ds5220-project1-data-${AWS::AccountId}'    
+                aws:SourceArn: !Sub 'arn:aws:s3:::${UvaId}-ds5220-dp1'    
+  
+  # S3 Bucket
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DependsOn: SnsTopicPolicy
+    Properties:
+      # Example: Calculate bucket name from two parameters using !Sub
+      BucketName: !Sub ${UvaId}-ds5220-dp1
+      NotificationConfiguration:
+        TopicConfigurations:
+          - Event: 's3:ObjectCreated:*'
+            Topic: !Ref SNSTopic
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: raw/
+                  - Name: suffix
+                    Value: .csv
+      Tags:
+        - Key: Name
+          Value: !Sub ${AWS::StackName}-bucket
   # Security Group allowing ports 80 and 22
   EC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Security group for EC2 instance allowing HTTP and SSH access
+      GroupDescription: Allows SSH and FastAPI access
       SecurityGroupIngress:
         - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
+          FromPort: 8000
+          ToPort: 8000
           CidrIp: 0.0.0.0/0
-          Description: Allow HTTP traffic from anywhere
+          Description: Allow FastAPI access
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
@@ -82,6 +99,20 @@ Resources:
             Action: sts:AssumeRole
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Policies:
+        - PolicyName: S3FullAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:ListBucket
+                  - s3:DeleteObject
+                Resource: 
+                  - !Sub 'arn:aws:s3:::${UvaId}-ds5220-dp1'
+                  - !Sub 'arn:aws:s3:::${UvaId}-ds5220-dp1/*'
       Tags:
         - Key: Name
           Value: !Sub ${AWS::StackName}-ec2-role
@@ -92,43 +123,6 @@ Resources:
     Properties:
       Roles:
         - !Ref EC2InstanceRole
-
-  # IAM Policy for S3 bucket access
-  S3BucketAccessPolicy:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyName: S3BucketAccessPolicy
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Action:
-              - s3:GetObject
-              - s3:PutObject
-              - s3:DeleteObject
-              - s3:ListBucket
-            Resource:
-              - !Sub ${S3Bucket.Arn}/*
-              - !Sub ${S3Bucket.Arn}
-      Roles:
-        - !Ref EC2InstanceRole
-
-  # S3 Bucket
-  S3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      # Example: Calculate bucket name from two parameters using !Sub
-      BucketName: !Sub ${UvaId}-${AWS::StackName}
-      VersioningConfiguration:
-        Status: Enabled
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
-      Tags:
-        - Key: Name
-          Value: !Sub ${AWS::StackName}-bucket
 
   # EC2 Instance
   EC2Instance:
@@ -144,32 +138,26 @@ Resources:
         Fn::Base64: !Sub |
           #!/bin/bash
           # Bootstrapping script
-          yum update -y
-          yum install -y httpd aws-cli
-          
-          # Start and enable Apache
-          systemctl start httpd
-          systemctl enable httpd
-
-          set -e
+          export BUCKET_NAME=${UvaId}-ds5220-dp1
+          echo "export BUCKET_NAME=${UvaId}-ds5220-dp1" >> /etc/environment
           
           # Update and install Python + pip
           apt-get update -y
-          apt-get install -y git python3 python3-pip python3-venv git
+          apt-get install -y git python3 python3-pip python3-venv
           
-          # clone and cd
+          # set up app
+          cd /home/ubuntu
           git clone https://github.com/randa-ama/anomaly-detection.git
-          
-          
-          # Create a virtualenv in a known location
-          python3 -m venv /opt/anomaly-detection/venv
-          
-          # Activate and install deps
-          source /opt/anomaly-detection/venv/bin/activate
-          /opt/anomaly-detection/venv/bin/pip install -r /opt/anomaly-detection/requirements.txt
-          
-          # The app.py FastAPI app can be run using full paths if necessary, even from outside the virtualenv:
-          /opt/anomaly-detection/venv/bin/fastapi run /opt/anomaly-detection/app.py --reload
+          cd anomaly-detection
+
+          # set up virtual environment
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+          # Start FastAPI
+          nohup uvicorn app:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
 
       Tags:
         - Key: Name
@@ -185,38 +173,12 @@ Resources:
     Properties:
       InstanceId: !Ref EC2Instance
       EIP: !Ref ElasticIP
+      AllocationId: !GetAtt ElasticIP.AllocationId
 
 Outputs:
-  InstanceId:
-    Description: The EC2 instance ID
-    Value: !Ref EC2Instance
-    Export:
-      Name: !Sub ${AWS::StackName}-InstanceId
-
-  ElasticIPAddress:
-    Description: Elastic IP address of the EC2 instance
-    Value: !Ref ElasticIP
-
-  SecurityGroupId:
-    Description: The security group ID
-    Value: !Ref EC2SecurityGroup
-    Export:
-      Name: !Sub ${AWS::StackName}-SecurityGroupId
-
-  S3BucketName:
-    Description: The name of the S3 bucket
+  AppURL:
+    Description: URL to subscribe to SNS
+    Value: !Sub 'http://${ElasticIP}:8000/notify'
+  BucketName:
     Value: !Ref S3Bucket
-    Export:
-      Name: !Sub ${UvaId}-${AWS::StackName}
-
-  S3BucketArn:
-    Description: The ARN of the S3 bucket
-    Value: !GetAtt S3Bucket.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-S3BucketArn
-
-  IAMRoleArn:
-    Description: The IAM role ARN for the EC2 instance
-    Value: !GetAtt EC2InstanceRole.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-IAMRoleArn
+  
