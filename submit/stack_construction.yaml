@@ -151,11 +151,12 @@ Resources:
           # set up virtual environment
           python3 -m venv venv
           source venv/bin/activate
-          pip install --upgrade pip
-          pip install -r requirements.txt
+          ./venv/bin/pip install -r requirements.txt
+
+          chown -R ubuntu:ubuntu /home/ubuntu/anomaly-detection
 
           # Start FastAPI
-          nohup uvicorn app:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
+          ./venv/bin/python3 -m uvicorn app:app --host 0.0.0.0 --port 8000 &
 
       Tags:
         - Key: Name
@@ -170,7 +171,6 @@ Resources:
     Type: AWS::EC2::EIPAssociation
     Properties:
       InstanceId: !Ref EC2Instance
-      EIP: !Ref ElasticIP
       AllocationId: !GetAtt ElasticIP.AllocationId
 
 Outputs:

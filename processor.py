@@ -2,7 +2,7 @@
 import json
 import io
 import boto3
-import logger
+import logging
 import pandas as pd
 from datetime import datetime
 
