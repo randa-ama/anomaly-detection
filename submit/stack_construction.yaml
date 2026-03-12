@@ -155,7 +155,7 @@ Resources:
           pip install -r requirements.txt
 
           # Start FastAPI
-          /opt/anomaly-detection/venv/bin/fastapi run /opt/anomaly-detection/app.py --reload
+          ./venv/bin/fastapi run app.py --port 8000
 
       Tags:
         - Key: Name
