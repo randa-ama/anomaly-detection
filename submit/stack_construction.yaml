@@ -155,7 +155,7 @@ Resources:
           pip install -r requirements.txt
 
           # Start FastAPI
-          nohup uvicorn app:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
+          /opt/anomaly-detection/venv/bin/fastapi run /opt/anomaly-detection/app.py --reload
 
       Tags:
         - Key: Name
