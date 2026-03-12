@@ -1,0 +1,515 @@
+
+2026-03-12 01:33:59,457 - uvicorn.error - INFO - Started server process [4094]
+2026-03-12 01:33:59,459 - uvicorn.error - INFO - Waiting for application startup.
+2026-03-12 01:33:59,459 - uvicorn.error - INFO - Application startup complete.
+2026-03-12 01:33:59,461 - uvicorn.error - ERROR - [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+2026-03-12 01:33:59,461 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-03-12 01:33:59,462 - uvicorn.error - INFO - Application shutdown complete.
+2026-03-12 01:36:13,384 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:36:13,384 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:36:13,394 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T013611.csv
+2026-03-12 01:36:13,568 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:36:13,635 - baseline - INFO - No existing baseline found in S3, starting fresh
+2026-03-12 01:36:13,708 - baseline - INFO - Successfully added channel temperature to baseline 
+2026-03-12 01:36:13,708 - baseline - INFO - Successfully added channel humidity to baseline 
+2026-03-12 01:36:13,709 - baseline - INFO - Successfully added channel pressure to baseline 
+2026-03-12 01:36:13,709 - baseline - INFO - Successfully added channel wind_speed to baseline 
+2026-03-12 01:36:13,884 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T013611.csv
+2026-03-12 01:36:13,948 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:36:13,980 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:36:14,068 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:37:13,733 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:37:13,734 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:37:13,734 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T013712.csv
+2026-03-12 01:37:13,813 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:37:14,049 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T013712.csv
+2026-03-12 01:37:14,113 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:37:14,144 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:37:14,242 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:38:14,249 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:38:14,249 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:38:14,250 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T013813.csv
+2026-03-12 01:38:14,338 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:38:14,585 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T013813.csv
+2026-03-12 01:38:14,673 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:38:14,709 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:38:14,797 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:39:14,721 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:39:14,721 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:39:14,722 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T013913.csv
+2026-03-12 01:39:14,806 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:39:15,065 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T013913.csv
+2026-03-12 01:39:15,170 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:39:15,207 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:39:15,309 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:40:15,041 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:40:15,041 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:40:15,050 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014014.csv
+2026-03-12 01:40:15,141 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:40:15,399 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014014.csv
+2026-03-12 01:40:15,463 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:40:15,492 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:40:15,619 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:41:15,660 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:41:15,660 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:41:15,661 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014114.csv
+2026-03-12 01:41:15,737 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:41:15,984 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014114.csv
+2026-03-12 01:41:16,050 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:41:16,082 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:41:16,168 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:42:15,856 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:42:15,856 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:42:15,857 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014214.csv
+2026-03-12 01:42:15,929 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:42:16,187 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014214.csv
+2026-03-12 01:42:16,297 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:42:16,324 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:42:16,404 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:43:16,586 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:43:16,586 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:43:16,587 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014315.csv
+2026-03-12 01:43:16,665 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:43:16,947 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014315.csv
+2026-03-12 01:43:17,031 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:43:17,063 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:43:17,153 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:44:16,864 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:44:16,864 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:44:16,867 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014415.csv
+2026-03-12 01:44:16,951 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:44:17,266 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014415.csv
+2026-03-12 01:44:17,326 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:44:17,355 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 01:44:17,437 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:45:16,482 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:45:16,482 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:45:16,487 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014515.csv
+2026-03-12 01:45:16,569 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:45:16,810 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014515.csv
+2026-03-12 01:45:16,873 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:45:16,913 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:45:16,989 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:46:16,903 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:46:16,904 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:46:16,909 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014615.csv
+2026-03-12 01:46:16,987 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:46:17,221 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014615.csv
+2026-03-12 01:46:17,328 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:46:17,363 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:46:17,446 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:47:17,355 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:47:17,355 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:47:17,356 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014716.csv
+2026-03-12 01:47:17,451 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:47:17,713 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014716.csv
+2026-03-12 01:47:17,796 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:47:17,833 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:47:17,938 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:48:17,855 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:48:17,855 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:48:17,860 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014816.csv
+2026-03-12 01:48:17,964 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:48:18,244 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014816.csv
+2026-03-12 01:48:18,319 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:48:18,352 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:48:18,465 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:49:17,273 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:49:17,274 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:49:17,274 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T014916.csv
+2026-03-12 01:49:17,356 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:49:17,628 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T014916.csv
+2026-03-12 01:49:17,702 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:49:17,748 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 01:49:17,834 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:50:18,002 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:50:18,002 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:50:18,002 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015016.csv
+2026-03-12 01:50:18,168 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:50:18,415 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015016.csv
+2026-03-12 01:50:18,482 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:50:18,515 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:50:18,596 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:51:18,193 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:51:18,194 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:51:18,194 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015117.csv
+2026-03-12 01:51:18,273 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:51:18,523 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015117.csv
+2026-03-12 01:51:18,585 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:51:18,617 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:51:18,700 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:52:18,452 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:52:18,452 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:52:18,453 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015217.csv
+2026-03-12 01:52:18,532 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:52:18,782 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015217.csv
+2026-03-12 01:52:18,851 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:52:18,881 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:52:18,986 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:53:18,980 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:53:18,980 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:53:18,981 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015317.csv
+2026-03-12 01:53:19,081 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:53:19,317 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015317.csv
+2026-03-12 01:53:19,434 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:53:19,465 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:53:19,551 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:54:19,415 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:54:19,415 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:54:19,416 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015418.csv
+2026-03-12 01:54:19,491 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:54:19,718 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015418.csv
+2026-03-12 01:54:19,777 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:54:19,806 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:54:19,888 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:55:20,679 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:55:20,680 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:55:20,685 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015518.csv
+2026-03-12 01:55:20,760 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:55:21,018 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015518.csv
+2026-03-12 01:55:21,076 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:55:21,104 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:55:21,174 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:56:21,013 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:56:21,014 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:56:21,019 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015619.csv
+2026-03-12 01:56:21,095 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:56:21,343 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015619.csv
+2026-03-12 01:56:21,453 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:56:21,486 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:56:21,570 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:57:21,444 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:57:21,444 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:57:21,445 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015720.csv
+2026-03-12 01:57:21,530 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:57:21,766 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015720.csv
+2026-03-12 01:57:21,837 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:57:21,875 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:57:21,970 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:58:21,930 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:58:21,930 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:58:21,935 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015820.csv
+2026-03-12 01:58:22,053 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:58:22,300 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015820.csv
+2026-03-12 01:58:22,384 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:58:22,416 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 01:58:22,502 - app - INFO - Successfully synced logs to S3.
+2026-03-12 01:59:22,331 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 01:59:22,331 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 01:59:22,332 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T015920.csv
+2026-03-12 01:59:22,408 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 01:59:22,640 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T015920.csv
+2026-03-12 01:59:22,738 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 01:59:22,782 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 01:59:22,881 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:00:22,040 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:00:22,040 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:00:22,045 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020021.csv
+2026-03-12 02:00:22,120 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:00:22,351 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020021.csv
+2026-03-12 02:00:22,452 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:00:22,485 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:00:22,564 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:01:22,522 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:01:22,523 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:01:22,523 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020121.csv
+2026-03-12 02:01:22,618 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:01:22,881 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020121.csv
+2026-03-12 02:01:22,955 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:01:22,992 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:01:23,077 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:02:22,740 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:02:22,740 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:02:22,741 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020221.csv
+2026-03-12 02:02:22,821 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:02:23,090 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020221.csv
+2026-03-12 02:02:23,153 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:02:23,186 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:02:23,288 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:03:23,505 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:03:23,505 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:03:23,506 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020321.csv
+2026-03-12 02:03:23,587 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:03:23,821 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020321.csv
+2026-03-12 02:03:23,890 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:03:23,922 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:03:24,006 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:04:22,712 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:04:22,712 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:04:22,713 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020422.csv
+2026-03-12 02:04:22,790 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:04:23,024 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020422.csv
+2026-03-12 02:04:23,088 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:04:23,117 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:04:23,204 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:05:23,369 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:05:23,369 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:05:23,374 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020522.csv
+2026-03-12 02:05:23,452 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:05:23,692 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020522.csv
+2026-03-12 02:05:23,756 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:05:23,788 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:05:23,897 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:06:23,688 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:06:23,688 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:06:23,689 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020622.csv
+2026-03-12 02:06:23,768 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:06:24,003 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020622.csv
+2026-03-12 02:06:24,131 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:06:24,167 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:06:24,259 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:07:24,240 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:07:24,240 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:07:24,241 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020722.csv
+2026-03-12 02:07:24,321 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:07:24,552 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020722.csv
+2026-03-12 02:07:24,618 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:07:24,651 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:07:24,743 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:08:24,598 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:08:24,598 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:08:24,598 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020823.csv
+2026-03-12 02:08:24,674 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:08:24,910 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020823.csv
+2026-03-12 02:08:24,977 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:08:25,012 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:08:25,089 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:09:24,154 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:09:24,155 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:09:24,157 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T020923.csv
+2026-03-12 02:09:24,232 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:09:24,478 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T020923.csv
+2026-03-12 02:09:24,594 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:09:24,636 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:09:24,725 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:10:24,630 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:10:24,630 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:10:24,635 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021023.csv
+2026-03-12 02:10:24,719 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:10:24,970 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021023.csv
+2026-03-12 02:10:25,034 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:10:25,068 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:10:25,156 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:11:25,166 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:11:25,166 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:11:25,171 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021123.csv
+2026-03-12 02:11:25,247 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:11:25,522 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021123.csv
+2026-03-12 02:11:25,593 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:11:25,623 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:11:25,764 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:12:25,405 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:12:25,405 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:12:25,411 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021224.csv
+2026-03-12 02:12:25,484 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:12:25,719 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021224.csv
+2026-03-12 02:12:25,782 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:12:25,812 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:12:25,893 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:13:24,995 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:13:24,995 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:13:25,000 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021324.csv
+2026-03-12 02:13:25,129 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:13:25,372 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021324.csv
+2026-03-12 02:13:25,444 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:13:25,486 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 02:13:25,573 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:14:25,610 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:14:25,610 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:14:25,611 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021424.csv
+2026-03-12 02:14:25,691 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:14:25,958 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021424.csv
+2026-03-12 02:14:26,059 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:14:26,089 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:14:26,170 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:15:26,347 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:15:26,347 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:15:26,351 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021524.csv
+2026-03-12 02:15:26,423 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:15:26,699 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021524.csv
+2026-03-12 02:15:26,789 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:15:26,817 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:15:26,905 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:16:26,583 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:16:26,583 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:16:26,584 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021625.csv
+2026-03-12 02:16:26,661 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:16:26,940 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021625.csv
+2026-03-12 02:16:27,023 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:16:27,110 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 02:16:27,190 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:17:27,740 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:17:27,741 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:17:27,744 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021726.csv
+2026-03-12 02:17:27,828 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:17:28,061 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021726.csv
+2026-03-12 02:17:28,127 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:17:28,160 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:17:28,247 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:18:28,170 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:18:28,170 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:18:28,171 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021826.csv
+2026-03-12 02:18:28,250 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:18:28,482 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021826.csv
+2026-03-12 02:18:28,700 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:18:28,748 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:18:28,866 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:19:28,651 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:19:28,651 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:19:28,652 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T021927.csv
+2026-03-12 02:19:28,729 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:19:28,964 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T021927.csv
+2026-03-12 02:19:29,029 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:19:29,064 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:19:29,171 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:20:29,174 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:20:29,174 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:20:29,175 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022027.csv
+2026-03-12 02:20:29,247 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:20:29,477 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022027.csv
+2026-03-12 02:20:29,544 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:20:29,576 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:20:29,660 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:21:29,447 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:21:29,448 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:21:29,448 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022128.csv
+2026-03-12 02:21:29,529 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:21:29,782 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022128.csv
+2026-03-12 02:21:29,846 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:21:29,888 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:21:30,003 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:22:29,065 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:22:29,065 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:22:29,070 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022228.csv
+2026-03-12 02:22:29,152 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:22:29,392 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022228.csv
+2026-03-12 02:22:29,457 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:22:29,493 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:22:29,573 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:23:29,541 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:23:29,544 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:23:29,548 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022328.csv
+2026-03-12 02:23:29,649 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:23:29,884 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022328.csv
+2026-03-12 02:23:29,998 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:23:30,031 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 02:23:30,124 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:24:29,895 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:24:29,895 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:24:29,898 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022428.csv
+2026-03-12 02:24:29,973 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:24:30,258 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022428.csv
+2026-03-12 02:24:30,332 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:24:30,362 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:24:30,446 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:25:30,260 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:25:30,260 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:25:30,260 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022529.csv
+2026-03-12 02:25:30,343 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:25:30,586 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022529.csv
+2026-03-12 02:25:30,702 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:25:30,734 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:25:30,830 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:26:30,685 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:26:30,685 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:26:30,690 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022629.csv
+2026-03-12 02:26:30,772 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:26:31,014 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022629.csv
+2026-03-12 02:26:31,082 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:26:31,125 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:26:31,207 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:27:30,248 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:27:30,248 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:27:30,248 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022729.csv
+2026-03-12 02:27:30,333 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:27:30,590 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022729.csv
+2026-03-12 02:27:30,660 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:27:30,933 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 02:27:31,027 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:28:30,775 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:28:30,775 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:28:30,780 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022829.csv
+2026-03-12 02:28:30,854 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:28:31,086 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022829.csv
+2026-03-12 02:28:31,149 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:28:31,181 - processor - INFO - Done: 7/100 anomalies flagged successfully
+2026-03-12 02:28:31,270 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:29:31,140 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:29:31,140 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:29:31,143 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T022930.csv
+2026-03-12 02:29:31,231 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:29:31,478 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T022930.csv
+2026-03-12 02:29:31,554 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:29:31,583 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:29:31,669 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:30:31,737 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:30:31,737 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:30:31,738 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023030.csv
+2026-03-12 02:30:31,822 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:30:32,052 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023030.csv
+2026-03-12 02:30:32,139 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:30:32,169 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:30:32,273 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:31:30,961 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:31:30,961 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:31:30,967 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023130.csv
+2026-03-12 02:31:31,043 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:31:31,314 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023130.csv
+2026-03-12 02:31:31,406 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:31:31,433 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:31:31,504 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:32:31,715 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:32:31,715 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:32:31,718 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023230.csv
+2026-03-12 02:32:31,804 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:32:32,062 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023230.csv
+2026-03-12 02:32:32,125 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:32:32,164 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:32:32,264 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:33:31,892 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:33:31,893 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:33:31,893 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023331.csv
+2026-03-12 02:33:31,973 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:33:32,226 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023331.csv
+2026-03-12 02:33:32,297 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:33:32,328 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:33:32,408 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:34:32,271 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:34:32,272 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:34:32,274 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023431.csv
+2026-03-12 02:34:32,362 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:34:32,612 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023431.csv
+2026-03-12 02:34:32,765 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:34:32,799 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:34:32,887 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:35:32,597 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:35:32,597 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:35:32,597 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023531.csv
+2026-03-12 02:35:32,685 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:35:32,945 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023531.csv
+2026-03-12 02:35:33,018 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:35:33,052 - processor - INFO - Done: 5/100 anomalies flagged successfully
+2026-03-12 02:35:33,150 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:36:33,132 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:36:33,132 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:36:33,137 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023631.csv
+2026-03-12 02:36:33,215 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:36:33,498 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023631.csv
+2026-03-12 02:36:33,561 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:36:33,594 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:36:33,680 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:37:32,779 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:37:32,779 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:37:32,784 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023732.csv
+2026-03-12 02:37:32,872 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:37:33,150 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023732.csv
+2026-03-12 02:37:33,232 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:37:33,270 - processor - INFO - Done: 6/100 anomalies flagged successfully
+2026-03-12 02:37:33,356 - app - INFO - Successfully synced logs to S3.
+2026-03-12 02:38:33,101 - app - INFO - New csv added to raw folder, starting processing
+2026-03-12 02:38:33,101 - app - INFO - Syncing log file to bucket gba4fj-ds5220-dp1
+2026-03-12 02:38:33,102 - processor - INFO - Processing: s3://gba4fj-ds5220-dp1/raw/sensors_20260312T023832.csv
+2026-03-12 02:38:33,181 - processor - INFO - Loaded 100 rows, columns: ['timestamp', 'temperature', 'humidity', 'pressure', 'wind_speed']
+2026-03-12 02:38:33,436 - processor - INFO - Anomaly detection completed for raw/sensors_20260312T023832.csv
+2026-03-12 02:38:33,500 - baseline - INFO - Successfully uploaded new baseline state/baseline.json to S3 bucket gba4fj-ds5220-dp1
+2026-03-12 02:38:33,579 - processor - INFO - Done: 6/100 anomalies flagged successfully
