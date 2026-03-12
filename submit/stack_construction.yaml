@@ -16,11 +16,9 @@ Parameters:
     MinLength: 3
     MaxLength: 9
   SSHLocation:
-    Description: The IP address range that can be used for SSH access
+    Description: "Copy your IP from https://checkip.amazonaws.com and add /32 (e.g., 1.2.3.4/32)"
     Type: String
-    MinLength: 9
-    MaxLength: 18
-    Default: 0.0.0.0/0
+    Default: "0.0.0.0/0"
 
 Resources:
   # SNS topic creation
