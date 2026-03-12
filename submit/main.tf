@@ -127,7 +127,7 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
 }
 
 resource "aws_instance" "ec2_instance" {
-  ami                  = "ami-0b6c6ebed2801a5cb" # Ensure this AMI is correct for your region
+  ami                  = "ami-0b6c6ebed2801a5cb" 
   instance_type        = var.instance_type
   key_name             = var.key_name
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
